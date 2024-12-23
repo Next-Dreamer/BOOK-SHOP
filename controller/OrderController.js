@@ -6,7 +6,7 @@ const order = async (req,res) => {
     const conn = await mariadb.createConnection({
         host : '127.0.0.1',
         user : 'root',
-        password : DB_PASSWORD,
+        password : process.env.DB_PASSWORD,
         database : 'BookShop',
         dateStrings : true
     });
@@ -57,7 +57,7 @@ const getOrders = async (req,res) => {
     const conn = await mariadb.createConnection({
         host : '127.0.0.1',
         user : 'root',
-        password : DB_PASSWORD,
+        password : process.env.DB_PASSWORD,
         database : 'BookShop',
         dateStrings : true
     });
@@ -76,7 +76,7 @@ const getOrdersDetil = async (req,res) => {
     const conn = await mariadb.createConnection({
         host : '127.0.0.1',
         user : 'root',
-        password : DB_PASSWORD,
+        password : process.env.DB_PASSWORD,
         database : 'BookShop',
         dateStrings : true
     });
