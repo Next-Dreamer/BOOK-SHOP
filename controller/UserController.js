@@ -49,9 +49,10 @@ const login = (req,res) => {
             if(loginUser && loginUser.password == hsahPassword) {
                 // 토큰 발행
                 const token = jwt.sign({
+                    id : loginUser.id,
                     email : loginUser.email
                 }, process.env.PRIVATE_KEY, {
-                    expiresIn : '5m',
+                    expiresIn : '10m',
                     issuer : "jinuk"
                 });
 
